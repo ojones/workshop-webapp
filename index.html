@@ -1,56 +1,93 @@
 <!doctype html>
 <title>CSS Grid Template 2</title>
 <style>
-body { 
+body {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "header header header"
     "nav article ads"
     "footer footer footer";
-  grid-template-rows: 80px 1fr 70px;  
+  grid-template-rows: 80px 1fr 70px;
   grid-template-columns: 20% 1fr 15%;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
   height: 100vh;
   margin: 0;
-  }  
-header, footer, article, nav, div {
-  padding: 1.2em;
-  background: gold;
   }
+header, footer, article, nav, ads {
+  padding: 0 1.2em 1.2em;
+}
 #pageHeader {
   grid-area: header;
+  /* put your styles for header here */
+  background: grey;
+  text-align: center;
+  vertical-align: top;
   }
 #pageFooter {
   grid-area: footer;
+  /* put your styles for footer here */
+  background: grey;
+  text-align: center;
   }
-#mainArticle { 
-  grid-area: article;      
+#mainArticle {
+  grid-area: article;
+  /* put your styles for article here */
+  background: grey;
   }
-#mainNav { 
-  grid-area: nav; 
+#mainNav {
+  grid-area: nav;
+  /* put your styles for nav here */
+  background: grey;
   }
-#siteAds { 
-  grid-area: ads; 
-  } 
+#siteAds {
+  grid-area: ads;
+  /* put your styles for ads here */
+  background: grey;
+  }
 /* Stack the layout on small devices/viewports. */
 @media all and (max-width: 575px) {
-  body { 
-    grid-template-areas: 
+  body {
+    grid-template-areas:
       "header"
       "article"
       "ads"
       "nav"
       "footer";
-    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-rows: 80px 1fr 70px 1fr 70px;
     grid-template-columns: 1fr;
  }
 }
 </style>
 <body>
-  <header id="pageHeader">Header</header>
-  <article id="mainArticle">Article</article>
-  <nav id="mainNav">Nav</nav>
-  <div id="siteAds">Ads</div>
-  <footer id="pageFooter">Footer</footer>
+  <header id="pageHeader">
+    <h1>Workshop Webapp</h1>
+  </header>
+  <article id="mainArticle">
+    <h2>Things I'd like to learn:</h2>
+    <p>
+      Here is where I make a list of things I want to learn.
+    </p>
+    <button onclick="handleButtonGrowUp()">When I grow up I want to be?</button>
+  </article>
+  <nav id="mainNav">
+    <h3>List of stuff I like:</h3>
+    <div>
+
+    </div>
+  </nav>
+  <ads id="siteAds">
+    <h3>Links to stuff I like:</h3>
+    <div>
+
+    </div>
+  </ads>
+  <footer id="pageFooter">
+    <h4>Quote that is important to me:</h4>
+  </footer>
+  <script>
+    function handleButtonGrowUp() {
+      alert("answer to what I want to be")
+    }
+  </script>
 </body>
